@@ -18,7 +18,7 @@ const ingredientList = [{
     },
     {
         id: 'whip-cream',
-        name: 'Whip Cream',
+        name: 'Whipped Cream',
         type: 'topping',
         cost: 2
     },
