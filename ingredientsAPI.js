@@ -44,6 +44,7 @@ ingredientEndpts.get('/names/all', (req, res) => {
     res.status(200).json(resArray);
 });
 
+//Grady: I don't understand why this returns an array. Aren't IDs unique?
 ingredientEndpts.get('/names/:ingrId', (req, res) => {
     let resArray = [];
     for (const ingredient of ingredientList) {
