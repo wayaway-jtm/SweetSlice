@@ -69,9 +69,9 @@ ingredientEndpts.get('/names/all', (req, res) => {
  */
 ingredientEndpts.get('/:id/', (req, res) => {
     if (isValidId(req.params.id)) {
-        res.status(200).json(ingredientList.find(i => i.id === req.params.id.toLowerCase()));
+        res.status(200).json(ingredientList.find(i => i.id === req.params.id.toLowerCase()[0]));
     } else {
-        res.status(400).json(`Ingredient with ID ${req.params.id} not found`);
+        res.status(404).json(`Ingredient with ID ${req.params.id} not found`);
     }
 });
 
@@ -83,9 +83,9 @@ ingredientEndpts.get('/:id/:propName', (req, res) => {
     if (isValidId(req.params.id)) {
         let lcaseId = req.params.id.toLowerCase();
         let lcasePropName = req.params.propName.toLowerCase();
-        let ingredient = ingredientList.find(i => i === lcaseId);
+        let ingredient = ingredientList.find(i => i === lcaseId)[0];
         if (ingredient.hasOwnProperty(lcasePropName)) {
-            res.status(200).json(ingredientList.find(i => i === lcaseId)[req.params.propName]);
+            res.status(200).json(ingredient[lcasePropName]);
         } else {
             res.status(400).json(`${req.params.propName} is not a valid property name`);
         }
