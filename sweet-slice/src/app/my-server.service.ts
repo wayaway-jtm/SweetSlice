@@ -50,16 +50,6 @@ export class myServer {
       );
   }
 
-  /* This seems redundant with getIngredientProperty and its route. 
-  //returns the name of the ingredient with the given ID. 
-  getNameByID (id : string) {
-    return this.http
-      .get(`${this.myPath}/names/${id}`, 
-        { responseType: "json"}
-      );
-  }
-  */
-
   //returns the selected property ("name", "type", or "cost") of the ingredient with the ID provided
   getIngredientProperty (id : string, property : string) {
     return this.http
@@ -68,7 +58,6 @@ export class myServer {
       );
   }
 
-  /* These routes aren't actually built yet. They also don't seem to have any use case. 
   //returns all the costs. 
   getCosts () {
     return this.http
@@ -76,15 +65,4 @@ export class myServer {
         { responseType: "json"}
       );
   }
-
-  //returns the cost of the selected ingredient. 
-  //This seems redundant with getIngredientProperty and its route. 
-  getCostByID (amount : number) {
-    return this.http
-      .get(`${this.myPath}/costs/${amount}`, 
-        { responseType: "json"}
-      );
-  }
-  */
-
 }
