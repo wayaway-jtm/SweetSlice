@@ -7,7 +7,12 @@ export class Ingredient implements IIngredient {
     cost: number = -1;
     selected?: boolean = false;
 
-    constructor() {
+    constructor(baseIngredient?: IIngredient, isSelected: boolean = false) {
+        this.id = baseIngredient.id;
+        this.name = baseIngredient.name;
+        this.type = baseIngredient.type;
+        this.cost = baseIngredient.cost;
+        this.selected = isSelected;
     }
 }
 
