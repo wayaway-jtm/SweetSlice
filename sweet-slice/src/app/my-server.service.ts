@@ -12,17 +12,17 @@ export class myServer {
 
   //returns an array of all defined ingredients as objects. 
   getAllIngredients() {
-    let ingredients = [];
-    this.http
-      .get(`${this.myPath}/all`,
-        { responseType: "json" }
-      ).subscribe(
-        (data: any) => {
-          console.log(data);
-          ingredients = data;
-        },
-        err => console.log('Error: ', err),
-        () => { return ingredients; });
+    
+    return this.http.get(`${this.myPath}/all`, { responseType: "json" });
+    // Code for attempting to return an array
+      // let ingredients = [];
+      // ).subscribe(
+      //   (data: any) => {
+      //     console.log(data);
+      //     ingredients = data;
+      //   },
+      //   err => console.log('Error: ', err),
+      //   () => { return ingredients; });
   }
 
   //returns an array of all IDs currently in use. 
