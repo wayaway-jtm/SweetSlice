@@ -20,3 +20,9 @@ app.listen(port, () => {
 
 // use ingredients api module for handling facts
 app.use("/ingredients", ingredientEndpts);
+
+// Allows the use of Angular paths in address bar
+/*
+    MUST FOLLOW ALL OTHER PATH SPECIFIERS
+*/
+app.use("/*", express.static("./sweet-slice/public"));
