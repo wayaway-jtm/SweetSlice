@@ -13,15 +13,44 @@ export class PizzaMakerComponent implements OnInit {
   _frostings: Ingredient[] = [];
   _crusts: Ingredient[] = [];
   _types: string[] = [];
-  constructor(private server: myServer) { }
-
-  ngOnInit(): void {
+  constructor(private server: myServer) {
     // Getting all the different type names
     this.server.getAllTypes().subscribe((data: string[]) => this._types = data);
     // Getting ingredients by each type so filtering isn't needed later
-    this.server.getAllOfType('topping').subscribe((data: IIngredient[]) => this._toppings = data);
-    this.server.getAllOfType('frosting').subscribe((data: IIngredient[]) => this._frostings = data);
-    this.server.getAllOfType('crust').subscribe((data: IIngredient[]) => this._crusts = data);
+    this.server.getAllOfType('topping').subscribe((data: IIngredient[]) => {
+      for (const iIngredient of data) {
+        this._toppings.push(new Ingredient(iIngredient));
+      }
+    });
+    this.server.getAllOfType('frosting').subscribe(
+      (data: IIngredient[]) => {
+        for (const iIngredient of data) {
+          this._frostings.push(new Ingredient(iIngredient));
+        }
+      },
+      err => console.log('Error: ', err),
+      () => this._frostings[0].selected = true); // Sets first option to be selected AFTER it's done loading the array
+    this.server.getAllOfType('crust').subscribe(
+      (data: IIngredient[]) => {
+        for (const iIngredient of data) {
+          this._crusts.push(new Ingredient(iIngredient));
+        }
+      },
+      err => console.log('Error: ', err),
+      () => this._crusts[0].selected = true); // Sets first option to be selected AFTER it's done loading the array
+  }
+
+  ngOnInit(): void {
+    // Setting initial values for radio buttons
+    console.log(this._toppings);
+    console.log(this._frostings);
+    console.log(this._crusts);
+  }
+
+  logArrays() {
+    console.log(this._toppings);
+    console.log(this._frostings);
+    console.log(this._crusts);
   }
 
 }
