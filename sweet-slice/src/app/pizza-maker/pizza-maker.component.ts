@@ -41,12 +41,7 @@ export class PizzaMakerComponent implements OnInit {
       () => this._crusts[0].selected = true); // Sets first option to be selected AFTER it's done loading the array
   }
 
-  ngOnInit(): void {
-    // Setting initial values for radio buttons
-    console.log(this._toppings);
-    console.log(this._frostings);
-    console.log(this._crusts);
-  }
+  ngOnInit(): void { }
 
   addToCart() {
     // Converting toppings into interfaces
