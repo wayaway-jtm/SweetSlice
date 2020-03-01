@@ -14,6 +14,15 @@ export class Ingredient implements IIngredient {
         this.cost = baseIngredient.cost;
         this.selected = isSelected;
     }
+
+    convertToInterface(): IIngredient {
+        return {
+            id: this.id,
+            name: this.name,
+            type: this.type,
+            cost: this.cost
+        }
+    }
 }
 
 export class Pizza implements IPizza {
