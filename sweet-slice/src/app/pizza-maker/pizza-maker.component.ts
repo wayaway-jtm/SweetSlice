@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-// import { SERVICEPLACEHOLDER } from '_____/______';
+import { myServer } from '../my-server.service';
 
 @Component({
   selector: 'app-pizza-maker',
@@ -8,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PizzaMakerComponent implements OnInit {
 
-  constructor() { }
 
-  ngOnInit(): void {
+
+  constructor(private service: myServer) { }
+
+  ngOnInit() {
+this.service.getAllIngredients();
+  
   }
 
 }
@@ -18,13 +22,4 @@ export class PizzaMakerComponent implements OnInit {
 
 // Setting pizza service to pizza array to ngfor through
 
-// export class PuppyListComponent implements OnInit {
-//   puppies : IPuppy[];
-//   constructor(public service : PuppyFinderService) { }
 
-
-//   ngOnInit(): void {
-//     this.puppies = this.service.getPuppy();
-//   }
-
-// }

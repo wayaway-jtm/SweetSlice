@@ -1,4 +1,4 @@
-export interface Ingredient {
+export interface IIngredient {
     id : string;
     name : string;
     type : string;
@@ -6,7 +6,7 @@ export interface Ingredient {
 }
 
 export interface IPizza {
-    toppings: Ingredient[];
-    frosting: Ingredient;
-    crust: Ingredient;
+    toppings: IIngredient[];
+    frosting: IIngredient;
+    crust: IIngredient;
 }

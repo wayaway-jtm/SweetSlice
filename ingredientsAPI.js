@@ -1,5 +1,5 @@
 import express from "express";
-import ingredientList from "./ingredients"
+import ingredientList from "./ingredients.js"
 import isUndefined from "util";
 
 
@@ -171,3 +171,5 @@ function isValidCost(cost) {
 }
 //#endregion
 //#endregion
+
+export default ingredientEndpts;
