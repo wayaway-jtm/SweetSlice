@@ -32,17 +32,13 @@ export class PizzaMakerComponent implements OnInit {
         for (const iIngredient of data) {
           this._frostings.push(new Ingredient(iIngredient));
         }
-      },
-      err => console.log('Error: ', err),
-      () => this._frostings[0].selected = true); // Sets first option to be selected AFTER it's done loading the array
+      });
     this.server.getAllOfType('crust').subscribe(
       (data: IIngredient[]) => {
         for (const iIngredient of data) {
           this._crusts.push(new Ingredient(iIngredient));
         }
-      },
-      err => console.log('Error: ', err),
-      () => this._crusts[0].selected = true); // Sets first option to be selected AFTER it's done loading the array
+      });
   }
 
   ngOnInit(): void { }

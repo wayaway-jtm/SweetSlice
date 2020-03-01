@@ -8,18 +8,18 @@
   </div>
   <div class="type-wrapper">
     <h1 class="type-name">Frosting</h1>
-    <div class="topping" *ngFor="let ingr of _frostings">
+    <div class="topping" *ngFor="let ingr of _frostings; index as i">
       <label>
-        <input type="radio" name="frosting" [checked]="ingr.selected">
+        <input type="radio" name="frosting" [checked]="i === 0" (change)="chooseFrosting(ingr)">
         {{ingr.name}}
       </label>
     </div>
   </div>
   <div class="type-wrapper">
     <h1 class="type-name">Crust</h1>
-    <div class="topping" *ngFor="let ingr of _crusts">
+    <div class="topping" *ngFor="let ingr of _crusts; index as i">
       <label>
-        <input type="radio" name="crust" [checked]="ingr.selected">
+        <input type="radio" name="crust" [checked]="i === 0" (change)="chooseFrosting(ingr)">
         {{ingr.name}}
       </label>
     </div>
