@@ -5,6 +5,7 @@ export class Ingredient implements IIngredient {
     name: string = '';
     type: string = '';
     cost: number = -1;
+    selected: boolean = false;
 
     constructor() {
     }
