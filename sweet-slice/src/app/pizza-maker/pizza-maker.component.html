@@ -1,1 +1,21 @@
-<p>pizza-maker works!</p>
+<div class="type-wrapper">
+  <h1 class="type-name">Toppings</h1>
+  <div class="topping" *ngFor="let ingr of _toppings">
+    <input type="checkbox" name="ingr.name" id="ingr.id">
+    <label for="ingr.name">{{ingr.name}}</label>
+  </div>
+</div>
+<div class="type-wrapper">
+  <h1 class="type-name">Frosting</h1>
+  <div class="topping" *ngFor="let ingr of _frostings">
+    <input type="radio" name="ingr.name" id="ingr.id">
+    <label for="ingr.name">{{ingr.name}}</label>
+  </div>
+</div>
+<div class="type-wrapper">
+  <h1 class="type-name">Crust</h1>
+  <div class="topping" *ngFor="let ingr of _crusts">
+    <input type="radio" name="ingr.name" id="ingr.id">
+    <label for="ingr.name">{{ingr.name}}</label>
+  </div>
+</div>
