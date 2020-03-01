@@ -10,9 +10,9 @@ import { FormGroup, FormControl } from '@angular/forms';
   styleUrls: ['./pizza-maker.component.css']
 })
 export class PizzaMakerComponent implements OnInit {
-  _toppings: IIngredient[] = [];
-  _frostings: IIngredient[] = [];
-  _crusts: IIngredient[] = [];
+  _toppings: Ingredient[] = [];
+  _frostings: Ingredient[] = [];
+  _crusts: Ingredient[] = [];
   _types: string[] = [];
   _customPizza: Pizza = new Pizza();
   _pizzaForm: FormGroup = new FormGroup({
