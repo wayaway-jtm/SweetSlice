@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { myServer } from '../my-server.service';
 import { IIngredient, IPizza } from '../interfaces';
 import { Ingredient, Pizza } from '../classes';
+import { MyCartService } from '../my-cart.service';
 
 @Component({
   selector: 'app-pizza-maker',
@@ -13,7 +14,7 @@ export class PizzaMakerComponent implements OnInit {
   _frostings: Ingredient[] = [];
   _crusts: Ingredient[] = [];
   _types: string[] = [];
-  constructor(private server: myServer) {
+  constructor(private server: myServer, private cart: MyCartService) {
     // Getting all the different type names
     this.server.getAllTypes().subscribe((data: string[]) => this._types = data);
     // Getting ingredients by each type so filtering isn't needed later
@@ -47,10 +48,16 @@ export class PizzaMakerComponent implements OnInit {
     console.log(this._crusts);
   }
 
-  logArrays() {
-    console.log(this._toppings);
-    console.log(this._frostings);
-    console.log(this._crusts);
+  addToCart() {
+    // Converting toppings into interfaces
+    let toppingInterfaces: IIngredient[] = [];
+    for (const ingredient of this._toppings.filter(i => i.selected)) {
+      toppingInterfaces.push(ingredient.convertToInterface());
+    }
+    // Adding pizza to cart
+    this.cart.addPizza(this._crusts.find(i => i.selected).convertToInterface(),
+                        this._frostings.find(i => i.selected).convertToInterface(),
+                        toppingInterfaces);
   }
 
 }
