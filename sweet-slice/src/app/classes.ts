@@ -29,21 +29,16 @@ export class Pizza implements IPizza {
     toppings: IIngredient[] = [];
     frosting: IIngredient = new Ingredient();
     crust: IIngredient = new Ingredient();
+    toppingsTotal: number = 0;
 
-    constructor() {
-    }
+    constructor(basePizza?: IPizza, toppingsTotal: number = 0) {
+        this.toppings = basePizza.toppings;
+        this.frosting = basePizza.frosting;
+        this.crust = basePizza.crust;
 
-    addToPizza(newIngredient: IIngredient) {
-        switch (newIngredient.type.toLowerCase()) {
-            case 'topping':
-                this.toppings.push(newIngredient);
-                break;
-            case 'frosting':
-                this.frosting = newIngredient;
-                break;
-            case 'crust':
-                this.crust = newIngredient;
-                break;
+        for (const topping of this.toppings) {
+            this.toppingsTotal += topping.cost;
         }
+
     }
 }
