@@ -7,6 +7,7 @@
           <input type="checkbox" [(ngModel)]="ingr.selected">
           {{ingr.name}}
         </label>
+        <span class="ingr-price">${{ingr.cost}}</span>
       </div>
     </div>
     <div class="type-wrapper">
@@ -16,6 +17,7 @@
           <input type="radio" name="frosting" [checked]="i === 0" (change)="chooseFrosting(ingr)">
           {{ingr.name}}
         </label>
+        <span class="ingr-price">${{ingr.cost}}</span>
       </div>
     </div>
     <div class="type-wrapper">
@@ -25,6 +27,7 @@
           <input type="radio" name="crust" [checked]="i === 0" (change)="chooseCrust(ingr)">
           {{ingr.name}}
         </label>
+        <span class="ingr-price">${{ingr.cost}}</span>
       </div>
     </div>
   </div>

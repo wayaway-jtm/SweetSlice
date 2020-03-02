@@ -21,14 +21,29 @@ div.type-wrapper {
     flex-basis: 25%;
 }
 
+div.topping {
+    display: flex;
+}
+
+.topping label {
+    flex-grow: 1;
+    user-select: none;
+}
+
 #btn-add-to-cart {
     width: 85%;
     margin: 1vh 1vw;
     padding: 2vh;
     border-radius: 5px;
-    border: 1px solid black;
-    background-color: maroon;
+    border: 4px solid transparent;
+    background-color: #990a0a;
     color: white;
     font-weight: bold;
     font-size: 1.5rem;
+}
+
+#btn-add-to-cart:active {
+    border: 4px inset #440000;
+    border-style: inset;
+    background-color: maroon;
 }

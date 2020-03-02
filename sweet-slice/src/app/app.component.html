@@ -1,8 +1,10 @@
 <div class="site-header">
-  <a [routerLink]="['**']" routerLinkActive="router-link-active">
-    <h1>Sweet Slice</h1>
+  <a [routerLink]="['']" routerLinkActive="router-link-active">
+    <img src="../assets/SweetSliceLogo.png" alt="Sweet Slice logo" class="logo" />
   </a>
-  <a [routerLink]="['/pizzamaker']" routerLinkActive="router-link-active">Make a Pizza</a>
-  <a [routerLink]="['/checkout']" routerLinkActive="router-link-active"><button>Go To Checkout</button></a>
+  <section class="nav-links">
+    <a [routerLink]="['/pizzamaker']" routerLinkActive="router-link-active">Make a Pizza</a>
+    <a [routerLink]="['/checkout']" routerLinkActive="router-link-active">Go To Checkout</a>
+  </section>
 </div>
 <router-outlet></router-outlet>

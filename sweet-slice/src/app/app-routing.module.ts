@@ -12,6 +12,10 @@ const routes: Routes = [
     {
         path: 'checkout',
         component: CheckoutComponent
+    },
+    {
+        path: '',
+        component: PizzaMakerComponent
     }
 ];
 

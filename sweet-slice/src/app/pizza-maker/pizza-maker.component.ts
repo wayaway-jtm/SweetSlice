@@ -59,6 +59,9 @@ export class PizzaMakerComponent implements OnInit {
     this.cart.addPizza(this.selectedCrust.convertToInterface(),
                         this.selectedFrosting.convertToInterface(),
                         toppingInterfaces);
+    
+    // Reset the toppings
+    this.resetToppings();
   }
 
   chooseFrosting(chosenFrosting: Ingredient) {
@@ -67,5 +70,11 @@ export class PizzaMakerComponent implements OnInit {
 
   chooseCrust(chosenCrust: Ingredient) {
     this.selectedCrust = chosenCrust;
+  }
+
+  resetToppings() {
+    for (const topping of this._toppings) {
+      topping.selected = false;
+    }
   }
 }
