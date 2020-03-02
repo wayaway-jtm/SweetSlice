@@ -19,7 +19,7 @@
     <h1 class="type-name">Crust</h1>
     <div class="topping" *ngFor="let ingr of _crusts; index as i">
       <label>
-        <input type="radio" name="crust" [checked]="i === 0" (change)="chooseFrosting(ingr)">
+        <input type="radio" name="crust" [checked]="i === 0" (change)="chooseCrust(ingr)">
         {{ingr.name}}
       </label>
     </div>
