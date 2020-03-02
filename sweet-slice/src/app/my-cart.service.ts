@@ -22,8 +22,4 @@ export class MyCartService {
     console.log('Current cart: ', this.cart);
   }
 
-  getOrder(){
-    return this.cart;
-  }
-
 }
