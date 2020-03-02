@@ -63,8 +63,3 @@ export class PizzaMakerComponent implements OnInit {
     this.selectedCrust = chosenCrust;
   }
 }
-//initialize the array getting the items from the service  
-
-// Setting pizza service to pizza array to ngfor through
-
-
