@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { IPizza } from '../interfaces'
+import { MyCartService } from '../my-cart.service';
 
 @Component({
   selector: 'app-checkout',
@@ -6,8 +8,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./checkout.component.css']
 })
 export class CheckoutComponent implements OnInit {
+  cart : IPizza[];
 
-  constructor() { }
+  constructor(public service : MyCartService) { }
 
   ngOnInit(): void {
   }

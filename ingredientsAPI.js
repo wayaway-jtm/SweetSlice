@@ -1,6 +1,5 @@
 import express from "express";
 import ingredientList from "./ingredients.js"
-import isUndefined from "util";
 
 
 
@@ -28,7 +27,7 @@ ingredientEndpts.get('/ids', (req, res) => {
  */
 ingredientEndpts.get('/types/all', (req, res) => {
     let typeArray = []
-    for (const ingredient of ingrendientList) {
+    for (const ingredient of ingredientList) {
         if (!typeArray.includes(ingredient.type)) {
             typeArray.push(ingredient.type);
         }
@@ -130,6 +129,15 @@ ingredientEndpts.get('/costs/:num', (req, res) => {
 });
 //#endregion
 //#region Validation
+
+/**
+ * Checks whether or not the given object is defined
+ * @param {*} obj Any object
+ * @returns {Boolean} Whether or not given object is undefined
+ */
+function isUndefined(obj) {
+    return obj === undefined;
+}
 
 /**
  * Checks whether or not an ingredient exists with the given id
