@@ -1,4 +1,4 @@
-import  ingredientEndpts from "./ingredientsAPI.js";
+import ingredientEndpts from "./ingredientsAPI.js";
 import express from 'express';
 import cors from 'cors';
 
