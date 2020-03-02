@@ -1,0 +1,44 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+div.cart-items {
+    width: 90%;
+    overflow-x: scroll;
+    max-height: 50vh;
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.pizza {
+    border: 1px solid black;
+    border-radius: 5px;
+    margin: 1vh 2vw;
+    min-width: 25vw;
+    padding: 1rem;
+}
+
+.ingr-first-line {
+    display: flex;
+    align-items: center;
+}
+
+h4 {
+    flex-grow: 1;
+    margin: 0;
+}
+
+.ingr-name {
+    color: gray;
+}
+
+li {
+    list-style-type: disc;
+    display: flex;
+}
+
+#ingr-name {
+    flex-grow: 1;
+}

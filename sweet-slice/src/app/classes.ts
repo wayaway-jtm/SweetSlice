@@ -40,4 +40,8 @@ export class Pizza implements IPizza {
             this.toppingsTotal += topping.cost;
         }
     }
+
+    getCost(): number {
+        return this.toppingsTotal + this.frosting.cost + this.crust.cost
+    }
 }
