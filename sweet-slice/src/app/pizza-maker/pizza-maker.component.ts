@@ -15,8 +15,8 @@ export class PizzaMakerComponent implements OnInit {
   _crusts: Ingredient[] = [];
   _types: string[] = [];
 
-  selectedFrosting: IIngredient;
-  selectedCrust: IIngredient;
+  selectedFrosting: Ingredient;
+  selectedCrust: Ingredient;
 
   constructor(private server: myServer, private cart: MyCartService) {
     // Getting all the different type names
@@ -50,8 +50,8 @@ export class PizzaMakerComponent implements OnInit {
       toppingInterfaces.push(ingredient.convertToInterface());
     }
     // Adding pizza to cart
-    this.cart.addPizza(this._crusts.find(i => i.selected).convertToInterface(),
-                        this._frostings.find(i => i.selected).convertToInterface(),
+    this.cart.addPizza(this.selectedCrust.convertToInterface(),
+                        this.selectedFrosting.convertToInterface(),
                         toppingInterfaces);
   }
 
