@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { IPizza } from '../interfaces'
+import { IPizza, IIngredient } from '../interfaces'
 import { MyCartService } from '../my-cart.service';
 
 @Component({
@@ -8,7 +8,15 @@ import { MyCartService } from '../my-cart.service';
   styleUrls: ['./checkout.component.css']
 })
 export class CheckoutComponent implements OnInit {
-  
+  crust: IIngredient;
+  frosting: IIngredient;
+  toppings: IIngredient;
+  name: string;
+  id: number;
+  type: string;
+  cost: number;
+
+
 @Input() cart : IPizza;
 
   constructor(private service : MyCartService) { }
