@@ -27,8 +27,8 @@ export class Ingredient implements IIngredient {
 
 export class Pizza implements IPizza {
     toppings: IIngredient[] = [];
-    frosting: IIngredient = new Ingredient();
-    crust: IIngredient = new Ingredient();
+    frosting: IIngredient;
+    crust: IIngredient;
     toppingsTotal: number = 0;
 
     constructor(basePizza?: IPizza, toppingsTotal: number = 0) {
@@ -39,6 +39,5 @@ export class Pizza implements IPizza {
         for (const topping of this.toppings) {
             this.toppingsTotal += topping.cost;
         }
-
     }
 }
