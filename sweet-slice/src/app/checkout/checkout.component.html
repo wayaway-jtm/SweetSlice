@@ -1,1 +1,65 @@
-<p>checkout works!</p>
+<h1>Checkout</h1>
+
+<div class="cart-items">
+  <div class="pizza" *ngFor="let item of cart">
+    <div class="pizza-part">
+      <div class="ingr-details">
+        <section class="ingr-first-line">
+          <h4>Crust</h4>
+          <div class="ingr-cost">
+            {{item.crust.cost}}
+          </div>
+        </section>
+        <div class="ingr-name">
+          {{item.crust.name}}
+        </div>
+      </div>
+    </div>
+    <div class="pizza-part">
+      <div class="ingr-details">
+        <section class="ingr-first-line">
+          <h4>Frosting</h4>
+          <div class="ingr-cost">
+            {{item.frosting.cost}}
+          </div>
+        </section>
+        <div class="ingr-name">
+          {{item.frosting.name}}
+        </div>
+      </div>
+    </div>
+    <div class="pizza-part">
+      <div class="ingr-details">
+        <section class="ingr-first-line">
+          <h4>Toppings</h4>
+          <div class="ingr-cost">
+            {{item.toppingsTotal}}
+          </div>
+        </section>
+        <section class="topping-list">
+          <div class="ingr-name" *ngFor="let topping of item.toppings">
+            {{topping.name}}
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="order-total">
+  <p>
+    Subtotal:
+    <span class="toal-nums">{{subTotal}}</span>
+  </p>
+  <p>
+    Tax:
+    <span class="toal-nums">{{tax}}</span>
+  </p>
+  <label>
+    Tip:
+    <input type="number" [(ngModel)]="tipAmnt" (change)="updateTotal()" />
+  </label>
+  <section>
+    <h3>Order Total:</h3>
+    <span class="toal-nums">{{orderTotal}}</span>
+  </section>
+</div>

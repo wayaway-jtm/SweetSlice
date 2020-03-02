@@ -1,12 +1,10 @@
-<a [routerLink]="['**']" routerLinkActive="router-link-active"><h1>Sweet Slice</h1></a>
-<a [routerLink]="['/pizzamaker']" routerLinkActive="router-link-active">Make a Pizza</a>
-<h2>Crust</h2>
-<div class="crust-container"></div>
-
-<h2>Frosting</h2>
-<div class="frosting-container"></div>
-
-<h2>Topping</h2>
-<div class="topping-container"></div>
-
+<div class="site-header">
+  <a [routerLink]="['']" routerLinkActive="router-link-active">
+    <img src="../assets/SweetSliceLogo.png" alt="Sweet Slice logo" class="logo" />
+  </a>
+  <section class="nav-links">
+    <a [routerLink]="['/pizzamaker']" routerLinkActive="router-link-active">Make a Pizza</a>
+    <a [routerLink]="['/checkout']" routerLinkActive="router-link-active">Go To Checkout</a>
+  </section>
+</div>
 <router-outlet></router-outlet>
